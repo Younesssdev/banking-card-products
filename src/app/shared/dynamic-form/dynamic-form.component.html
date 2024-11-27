@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+    <div class="ui-fluid">
+        <app-field-form-control *ngFor="let field of config" [fieldConfig]="field" [form]="form"
+            (valueChange)="onFormValueChange()">
+        </app-field-form-control>
+    </div>
+</form>

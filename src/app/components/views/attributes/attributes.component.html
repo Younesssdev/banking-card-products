@@ -1,0 +1,21 @@
+    <p-scrollPanel [style]="{width: '100%', height: '600px'}">
+        <p-panel header="Attributes panel">
+            <p-accordion [activeIndex]="index">
+                <p-accordionTab header="GroupData">
+                    <app-dynamic-form [config]="xsdGroupDataConfig" [formGroupValue]="groupDataVlue"
+                        (valueUpdated)="onFormValueChange($event, dataType.GROUPDATA)"></app-dynamic-form>
+                </p-accordionTab>
+                <p-accordionTab header="Characteristic">
+                    <app-dynamic-form [config]="xsdCharacteristicConfig" [formGroupValue]="characteristicValue"
+                        (valueUpdated)="onFormValueChange($event, dataType.CHARACTERISTIC)">
+                    </app-dynamic-form>
+                </p-accordionTab>
+                <p-accordionTab header="ParentStructure">
+                    <app-parent></app-parent>
+                </p-accordionTab>
+                <p-accordionTab header="CurrentStructure">
+                    <app-current></app-current>
+                </p-accordionTab>
+            </p-accordion>
+        </p-panel>
+    </p-scrollPanel>

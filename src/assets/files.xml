@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GroupData genericProductVersion="Payment instrument V5.13" id="PANFeatures" resourceBundleID="Catalogue_product.panfeatures">
+	<GroupData id="GRP_GENERAL_CHARACT" resourceBundleID="Catalogue_product.grp_general_charact" index="1" panel="GenericPanel" valid="true">
+		<Characteristics>
+			<Characteristic id="CAR_FEATURE_TYPE" fieldType="StaticList" referencedTable="car_feature_type" resourceBundleID="Catalogue_product.car_feature_type" systemRequired="true">
+				<ParentStructure visible="true" mandatory="false" editable="true"/>
+				<CurrentStructure visible="true" mandatory="false" editable="true">
+					<Value>P</Value>
+				</CurrentStructure>
+			</Characteristic>
+			<Characteristic id="CAR_CURRENCY" fieldType="DynamicList" referenceKey="currency_code" referenceLabel="currency_code_alpha" referencedTable="Currency_table" resourceBundleID="Common.input.product_currency" systemRequired="true">
+				<ParentStructure visible="true" mandatory="false" editable="true"/>
+				<CurrentStructure visible="true" mandatory="false" editable="true">
+					<Value>203</Value>
+				</CurrentStructure>
+			</Characteristic>
+		</Characteristics>
+		<GroupData id="GRP_REPLACMNT_SAME_NUM" resourceBundleID="Catalogue_product.grp_replacmnt_same_num" valid="true">
+			<Characteristics>
+				<Characteristic id="CAR_REPL_ACTIV_FLAG" fieldType="StaticList" referencedTable="Yes_or_no_list" resourceBundleID="Catalogue_product.car_repl_activ_flag" length="24" systemRequired="true">
+					<ParentStructure visible="true" mandatory="false" editable="true"/>
+					<CurrentStructure visible="true" mandatory="false" editable="true">
+						<Value>N</Value>
+					</CurrentStructure>
+				</Characteristic>
+				<Characteristic id="CAR_REPL_DELIV_FLAG" fieldType="StaticList" referencedTable="Yes_or_no_list" resourceBundleID="Catalogue_product.car_repl_deliv_flag" length="24" systemRequired="true">
+					<ParentStructure visible="true" mandatory="false" editable="true"/>
+					<CurrentStructure visible="true" mandatory="false" editable="true">
+						<Value>N</Value>
+					</CurrentStructure>
+				</Characteristic>
+			</Characteristics>
+		</GroupData>
+	</GroupData>
+	<GroupData id="GRP_RENEWAL_VALIDITY" resourceBundleID="Catalogue_product.grp_renewal_validity" index="2" panel="GenericPanel" valid="true">
+		<Characteristics>
+			<Characteristic id="CAR_VALDTY_FRT_ISS" fieldType="Integer" resourceBundleID="Catalogue_product.car_valdty_frt_iss" length="3" systemRequired="true">
+				<ParentStructure visible="true" mandatory="false" editable="true"/>
+				<CurrentStructure visible="true" mandatory="false" editable="true">
+					<Value>60</Value>
+				</CurrentStructure>
+			</Characteristic>
+			<Characteristic id="CAR_VALDTY_RENW_ISS" fieldType="Integer" resourceBundleID="Catalogue_product.car_valdty_renw_iss" length="3" systemRequired="true">
+				<ParentStructure visible="true" mandatory="false" editable="true"/>
+				<CurrentStructure visible="true" mandatory="false" editable="true">
+					<Value>60</Value>
+				</CurrentStructure>
+			</Characteristic>
+			<Characteristic id="CAR_SUPPL_EXP_FLAG" fieldType="StaticList" referencedTable="Yes_or_no_list" resourceBundleID="Catalogue_product.car_suppl_exp_flag" length="24" systemRequired="true">
+				<ParentStructure visible="true" mandatory="false" editable="true"/>
+				<CurrentStructure visible="true" mandatory="false" editable="true">
+					<Value>Y</Value>
+				</CurrentStructure>
+			</Characteristic>
+		</Characteristics>
+	</GroupData>
+</GroupData>

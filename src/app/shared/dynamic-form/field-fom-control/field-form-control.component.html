@@ -1,0 +1,35 @@
+<div class="p-field p-grid" [formGroup]="form">
+  <label [attr.for]="fieldConfig.name" class="p-col-12 p-md-3">{{fieldConfig.label}}
+    <strong class="text-danger" [hidden]="!fieldConfig.required"> *</strong>
+  </label>
+  <div [ngSwitch]="fieldConfig.type" class="p-col-12 p-md-9">
+    <input pInputText *ngSwitchCase="'input'" [placeholder]="fieldConfig.placeholder || ''"
+      [formControlName]="fieldConfig.name" [id]="fieldConfig.name" [type]="fieldConfig.inputType || 'text'"
+      (keyup)="emitValueChange()" (keydown)="emitValueChange()" autocomplete="off">
+    <p-dropdown [id]="fieldConfig.name" *ngSwitchCase="'dropdown'" [options]="fieldConfig.options"
+      [formControlName]="fieldConfig.name" [placeholder]="fieldConfig.placeholder || '' "
+      (onChange)="emitValueChange()"></p-dropdown>
+  </div>
+</div>
+<!--<div [formGroup]="form" class="ui-fluid">
+  <div class="p-grid" style="margin-left: 100px">
+    <div class="p-col-fixed" style="width:100px">
+      <div class="box">
+        <label [attr.for]="fieldConfig.name">{{fieldConfig.label}}</label><strong class="text-danger" [hidden]="!fieldConfig.required"> *</strong>
+      </div>
+    </div>
+    <div [ngSwitch]="fieldConfig.type">
+      <div class="p-col">
+        <div class="box">
+          <input pInputText *ngSwitchCase="'input'" [placeholder]="fieldConfig.placeholder || ''"
+            [formControlName]="fieldConfig.name" [id]="fieldConfig.name" [type]="fieldConfig.inputType || 'text'"
+            (keyup)="emitValueChange()" (keydown)="emitValueChange()" autocomplete="off" >
+          <p-dropdown [id]="fieldConfig.name" *ngSwitchCase="'dropdown'" [options]="fieldConfig.options"
+            [formControlName]="fieldConfig.name" [placeholder]="fieldConfig.placeholder || '' "
+            (onChange)="emitValueChange()"></p-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>-->
+<!--<div class="text-danger" *ngIf="isValid">{{fieldConfig.label}} is required </div>
+</div>-->

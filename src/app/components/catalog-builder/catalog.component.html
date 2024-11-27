@@ -1,0 +1,57 @@
+<p-toast [style]="{marginTop: '30px'}" position="top-left"></p-toast>
+<p-toolbar>
+    <div class="ui-toolbar-group-left" style="display: flex;">
+        <p-fileUpload #xmlFileUpload chooseLabel="Open" mode="basic" name="upload-file" accept=".xml" [auto]="true"
+            (onSelect)="uploadFile($event,xmlFileUpload)"></p-fileUpload>
+        <p-fileUpload #xsdFileUpload chooseLabel="Select xsd" mode="basic" name="upload-file" accept=".xsd"
+            [auto]="true" (onSelect)="uploadxsd($event,xsdFileUpload)"></p-fileUpload>
+        <p-splitButton label="Save" icon="pi pi-check-circle" [model]="item" styleClass="ui-button-success"
+            (onClick)="saveBackup()" [disabled]="!xmlJson"></p-splitButton>
+
+    </div>
+    <div class="ui-toolbar-group-right">
+
+        <button pButton type="button" icon="pi pi-search"></button>
+        <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
+        <button pButton type="button" icon="pi pi-times" class="ui-button-danger"></button>
+    </div>
+</p-toolbar>
+<div class="ui-g">
+    <div class="ui-g-8 ui-g-nopad">
+        <div class="ui-g-4" style="width: 32.3333%;">
+            <div class="ui-g">
+                <app-tree #treeComponenet [xmlJson]="xmlJson" [nodeUpdated]="nodeUpdated"
+                    (onSelectTreeNode)="onSelectTreeNode($event)"></app-tree>
+            </div>
+        </div>
+        <div class="ui-g-8">
+            <div class="ui-g" style="margin-left: -20px;">
+                <p-breadcrumb [model]="items"></p-breadcrumb>
+            </div>
+            <div class="ui-g">
+                <app-preview></app-preview>
+            </div>
+        </div>
+    </div>
+    <div class="ui-g-4">
+        <app-attributes (treeNodeUpdated)="onNodeUpdated($event)"
+            (xsdMandatoryAttributes)="onXsdMandatoryAttributes($event)" [treeNodeSelected]="treeNodeSelected"
+            [xsdJson]="xsdJson"></app-attributes>
+    </div>
+</div>
+
+<!--
+    <div class="ui-g-8">header</div>
+
+    <div class="ui-g-8 ui-g-nopad">
+        <div class="ui-g-4">
+            <app-tree></app-tree>
+        </div>
+        <div class="ui-g-8">
+            <app-preview></app-preview>
+        </div>
+    </div>
+  
+    <div class="ui-g-4">
+       <app-attributes></app-attributes>
+    </div>-->
